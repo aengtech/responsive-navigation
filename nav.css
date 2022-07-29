@@ -1,0 +1,217 @@
+.header-container {
+    background: #fff;
+  }
+  
+  header {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    z-index: 1;
+    position: relative;
+    background: #fff;
+    padding-bottom: 15px;
+  }
+  
+  header .banner {
+    grid-column: 1/13;
+    background: black;
+    max-height: 100%;
+  }
+  header .banner .row {
+    margin: 0px;
+  }
+  
+  header .nav {
+    grid-column: 1/13;
+    background: hsl(0 0% 100% / 0.1);
+    backdrop-filter: blur(1rem);
+    position: fixed;
+    z-index: 99999999;
+    top: 0;
+    padding: 10px 0px;
+    transition: all 0.5s ease;
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+  
+  header .nav:hover {
+    background: #fff;
+  }
+  
+  header .nav .nav-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+  }
+  
+  header .nav-grid .logo-img {
+    grid-column: 1/3;
+    padding: 5px;
+    margin-left: 10px;
+  }
+  
+  header .nav-grid .disp-nav {
+    grid-column: 3/13;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+  }
+  
+  .nav-links {
+    grid-column: 3/10;
+  }
+  
+  header li.links {
+    display: inline-block;
+    padding: 10px;
+    color: #000;
+  }
+  
+  header .li.links:hover {
+    background: #e5e2e2;
+  }
+  
+  header li.links a {
+    color: #000;
+    font-family: 'Cormorant SC', serif;
+    font-weight: 600;
+  }
+  
+  header li.links a:hover {
+    color: #428bca;
+  }
+  
+  li.links.order_summary a {
+    position: relative;
+  }
+  
+  .side-icons {
+    grid-column: 11/13;
+    position: relative;
+  }
+  
+  .mobile-nav-toggle {
+    display: none;
+  }
+  
+  
+  .icon, [class^="icon-"]{
+    transform: scale(1.2);
+  }
+  
+  button.mobile-profile a {
+    color: #000;
+  }
+  
+  button.mobile-profile {
+    display: none;
+  }
+
+  @media (max-width: 1200px) {
+    .nav-links {
+      grid-column: 2/11;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .nav-links {
+      grid-column: 2/11;
+      position: relative;
+      right: 15px;
+    }
+  
+    header li.links {
+      font-size: 12px;
+      padding: 6px;
+    }
+  }
+
+  @media (max-width: 760px) {
+    #index .tab-content {
+      margin-top: 0px;
+    }
+  
+    header .nav-grid .logo-img {
+      grid-column: 5/8;
+    }
+  
+    .scrolled {
+      background: #fff !important;
+    }
+  
+    .side-icons {
+      display: none;
+    }
+    .primary-navigation {
+      position: fixed;
+      z-index: 1000;
+      inset: 0 0 0 30%;
+      display: block;
+      padding: min(30vh, 10rem) 2em;
+      transform: translateX(100%);
+      transition: transform 350ms ease-out;
+      background-image: url(http://dev.lunetterie-pourquoipas.ca/themes/aeng101/img/aeng/navbg5.jpg);
+      background-repeat: no-repeat;
+      background-size: inherit;
+      min-height: 120vh;
+    }
+  
+    
+  button.mobile-profile {
+    display: block;
+    grid-column: 12/13;
+    background: transparent;
+    width: 2em;
+    border: 0;
+    position: relative;
+    right: 5px;
+  }
+  
+    @supports (backdrop-filter: blur(1rem)) {
+      .primary-navigation {
+        background: hsl(0 0% 100% / 0.1);
+        backdrop-filter: blur(1rem);
+      }
+    }
+  
+    .primary-navigation[data-visible="true"] {
+      transform: translateX(0%);
+      background: hsl(0 0% 100% / 0.1) !important;
+      backdrop-filter: blur(1rem) !important;
+    }
+  
+    header li.links {
+      display: block;
+      font-size: 15px;
+      font-weight: 700;
+    }
+  
+    .mobile-nav-toggle {
+      display: block;
+      position: absolute;
+      z-index: 9999;
+      background-color: transparent;
+      background-image: url("http://dev.lunetterie-pourquoipas.ca/img/list.svg");
+      background-repeat: no-repeat;
+      width: 2rem;
+      border: 0;
+      aspect-ratio: 1;
+      top: 15px;
+      left: 3rem;
+    }
+  
+    .mobile-nav-toggle[aria-expanded="true"] {
+      background-image: url("http://dev.lunetterie-pourquoipas.ca/img/x-lg.svg");
+      top: 10px;
+      right: 2rem !important;
+    }
+}
+
+@media (min-width: 560px) {
+  .scrolled {
+    background: #fff !important;
+    /* background: hsl(0 0% 100% / 0.1) !important;
+    backdrop-filter: blur(1rem) !important; */
+  }
+
+  .primary-navigation {
+    background: hsl(0 0% 0% / 0.75);
+  }
+}  
